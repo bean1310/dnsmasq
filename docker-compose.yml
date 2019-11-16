@@ -1,0 +1,15 @@
+version: '3'
+services:
+    dnsmasq:
+        restart: always
+        build: .
+        container_name: dnsmasq
+        ports:
+            - "53:53/udp"
+            - "53:53/tcp"
+            - "67:67/udp"
+        extra_hosts:
+            - "wiki.hoge.local:192.168.11.1"
+            - "rpimon.hoge.local:192.168.11.1"
+        cap_add:
+            - NET_ADMIN
