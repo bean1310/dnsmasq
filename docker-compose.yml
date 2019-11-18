@@ -13,3 +13,5 @@ services:
             - "rpimon.hoge.local:192.168.11.1"
         cap_add:
             - NET_ADMIN
+        network_mode: "host"
+
